@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: springbootapp-service
+  namespace: springbootapp
+  labels:
+    app: http
+spec:
+  type: NodePort
+  ports:
+  - port: 9090
+  selector:
+    app: http
