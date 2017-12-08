@@ -3,6 +3,8 @@
  */
 package com.wiku.springboot.controller;
 
+import java.util.Date;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/v1")
 public class MyServiceController
 {
-    
+    int i=0;
     @RequestMapping(value = "test", method = RequestMethod.GET)
-    public String test()
+    public TestResponse test()
     {
-        return "hello";
+        return new TestResponse(i++,new Date().toString(),"hello");
     }
 
 
